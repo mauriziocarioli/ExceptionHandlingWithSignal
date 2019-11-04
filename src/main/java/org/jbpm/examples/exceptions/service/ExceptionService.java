@@ -28,11 +28,13 @@ public class ExceptionService implements WorkItemHandler {
 
     @Override
     public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
+        //TODO
         manager.completeWorkItem(workItem.getId(), null);
     }
 
     @Override
     public void abortWorkItem(WorkItem workItem, WorkItemManager manager) {
+        //TODO
     }
 
     public void handleException(WorkItem workItem) {
