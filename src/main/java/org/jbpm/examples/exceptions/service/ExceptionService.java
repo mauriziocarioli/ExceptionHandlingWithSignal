@@ -19,26 +19,14 @@ package org.jbpm.examples.exceptions.service;
 import java.util.Map;
 
 import org.kie.api.runtime.process.WorkItem;
-import org.kie.api.runtime.process.WorkItemHandler;
-import org.kie.api.runtime.process.WorkItemManager;
 
-public class ExceptionService implements WorkItemHandler {
+public class ExceptionService {
     
     public static String exceptionParameterName = "my.exception.parameter.name";
-
-    @Override
-    public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
-        //TODO
-        manager.completeWorkItem(workItem.getId(), null);
-    }
-
-    @Override
-    public void abortWorkItem(WorkItem workItem, WorkItemManager manager) {
-        //TODO
-    }
-
+    
     public void handleException(WorkItem workItem) {
         System.out.println( "Handling exception caused by work item '" + workItem.getName() + "' (id: " + workItem.getId() + ")");
+        
         Map<String, Object> params = workItem.getParameters();
         Throwable throwable = (Throwable) params.get(exceptionParameterName);
         throwable.printStackTrace();
