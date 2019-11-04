@@ -1,4 +1,3 @@
-Repository Init Content
+Exception Handling with Signal in jBPM
 =======================
 
-Your project description here.
